@@ -1,0 +1,28 @@
+    .hint {
+            line-height: 5%;
+            color:#737373;
+        }
+
+    a:not(.btn, .nav-link, .Text-White, .nav-item,.footerlink) {
+        color:teal !important;
+        text-decoration-line:underline !important; 
+     }
+
+     body {
+        font-size: 1em !important;
+    }
+
+    .disabled {
+        border-color:#DEE2E6 !important;
+        border-style: solid !important;
+        border-width: 0.5pt !important;
+      }
+
+      .tableinstructions{
+        p {
+            align:left;
+            padding-left:70%;
+        }
+    }
+
+
