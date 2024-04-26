@@ -1,0 +1,1025 @@
+<head>
+
+<!-- Google tag (gtag.js) -->
+
+<script src="https://efiling.fca-caf.ca/Content/vendors/wet-boew/js/i18n/en.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Q1HWL3M994"></script>
+
+<script>
+
+window.dataLayer = window.dataLayer || [];
+
+function gtag(){dataLayer.push(arguments);}
+
+gtag('js', new Date());
+
+gtag('config', 'G-Q1HWL3M994');
+
+</script>
+
+<!-- Google tag (gtag.js) -->
+    <meta charset="utf-8">
+    <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
+            wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
+    <title>Initiate New Proceeding</title>
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta name="description" content="Web Experience Toolkit (WET) includes reusable components for building and maintaining innovative Web sites that are accessible, usable, and interoperable. These reusable components are open source software and free for use by departments and external Web communities">
+    <link rel="alternate" hreflang="fr" href="https://efiling.fca-caf.ca/fr/acces-en-ligne/new-e-filing-start">
+    <link rel="apple-touch-icon" sizes="57x57 72x72 114x114 144x144 150x150" class="wb-favicon" href="https://efiling.fca-caf.ca/Content/vendors/GCWeb/assets/favicon-mobile.png"><link href="https://efiling.fca-caf.ca/Content/vendors/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon" class="wb-init wb-favicon-inited">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://efiling.fca-caf.ca/Content/vendors/GCWeb/css/theme.min.css">
+    <noscript><link rel="stylesheet" href="https://efiling.fca-caf.ca/Content/vendors/wet-boew/css/noscript.min.css" /></noscript>
+    
+
+    <script src="https://efiling.fca-caf.ca/Content/vendors/Jquery/jquery.js"></script>
+    <link rel="stylesheet" href="https://efiling.fca-caf.ca/content/css/base/loading.css">
+
+
+<script src="/Content/vendors/wet-boew/js/wet-boew.js"></script>
+<script src="/Content/vendors/GCWeb/js/theme.min.js"></script>
+<script src="/Scripts/jquery.cookie-1.4.1.min.js"></script>
+<script src="/Content/js/base/js.js"></script>
+<script src="/Content/js/base/utils.js"></script>
+
+<script src="/Scripts/jquery.validate.min.js"></script>
+<script src="/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<script src="/Content/js/pages/CourtFileInfo.js"></script>
+<script>
+    $(document).ready(function () {
+
+        (function ($, wb) {
+            "use strict";
+
+            wb.doc.on("click vclick", ".overlay-lnk", function (event) {
+
+                var url = $(this).attr("data-url");
+
+                $.ajax({
+                    url: url,
+                    type: "get",
+                    dataType: "html",
+                    async: false,
+                    success: function (result) {
+                        $("#popoupresults").html(result);
+                        $('#loadingscreen').hide();
+                    },
+                    failure: function (result) {
+                        console.log("failure: " + result);
+                        $('#loadingscreen').hide();
+                    },
+                    error: function (xhr, status, error) {
+                        var errorMessage = xhr.status + ': ' + xhr.statusText
+                        console.log('Error - ' + errorMessage);
+                        $('#loadingscreen').hide();
+                    }
+                });
+
+                $(".wb-overlay").trigger("wb-init.wb-overlay");
+
+                $(".wb-tables").trigger("wb-init.wb-tables");
+
+                $("#full-screen").trigger("open.wb-overlay");
+
+                event.preventDefault();
+            });
+        })(jQuery, wb);
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        
+        $('#loadingscreen').hide();
+    });
+</script>
+
+ <!-- New Font Awesome CSS (6) - for 'X' icon-->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+ <!--Bootstrap for modals-->
+
+</head>
+<body vocab="http://schema.org/" resource="#wb-webpage" typeof="WebPage" class="">
+<body vocab="http://schema.org/" resource="#wb-webpage" typeof="WebPage" class="wb-modal">
+    <div id="loadingscreen" class="loading" style="display: none">
+    </div>
+    <div id="loadingscreen2" style="display: none">
+        TEST TEXT
+        Add Party
+    </div>
+
+    
+    <header>
+        <div id="wb-bnr" class="container">
+            <div class="row">
+                <section id="wb-lng" class="col-xs-3 col-sm-12 pull-right text-right">
+                    <span class="wb-inv">Language selection</span>
+                    <ul class="list-inline mrgn-bttm-0">
+                        <li><a href="https://www.fca-caf.ca/en/home" title="Federal Court of Appeal" target="_blank">Federal Court of Appeal website</a></li>
+                        <li><a href="https://efiling.fca-caf.ca/en/online-access/startover" title="Home">E-Filing home</a></li>
+                        <li><a href="https://efiling.fca-caf.ca/en/online-access/guide" title="Guide" target="_blank">User guide</a></li>
+                        <li><a href="https://efiling.fca-caf.ca/en/online-access/faq" title="F.A.Q." target="_blank">Frequently-asked questions</a></li>
+                        <li>
+                            <a lang="fr" hreflang="fr" href="https://efiling.fca-caf.ca/fr/acces-en-ligne/new-e-filing-start">
+                                <span class="hidden-xs">Français</span>
+                                <abbr title="Français" class="visible-xs h3 mrgn-tp-sm mrgn-bttm-0 text-uppercase">fr</abbr>
+
+                            </a>
+                        </li>
+
+                    </ul>
+                </section>
+                <div class="brand col-xs-9 col-sm-5 col-md-4" property="publisher" resource="#wb-publisher" typeof="Government Organization">
+                    
+                    <meta property="name" content="Federal Court of Appeal">
+                    <meta property="areaServed" typeof="Country" content="Canada">
+                    <link property="logo" href="https://efiling.fca-caf.ca/Content/img/base/fca-logo.jpg">
+                </div>
+
+                
+            </div>
+        </div>
+
+        
+        <!--<nav class="gcweb-menu" typeof="SiteNavigationElement">
+        <div class="container">
+            <h2 class="wb-inv">Menu</h2>
+                <button type="button" aria-haspopup="true" aria-expanded="false">Menu<span class="wb-inv"> Main</span> <span class="expicon glyphicon glyphicon-chevron-down"></span></button>
+-->
+        
+        <!--</div>
+        </nav>-->
+        
+
+        
+
+    </header>
+
+    
+
+        <main property="mainContentOfPage" resource="#wb-main" class="container" typeof="WebPageElement">
+            
+
+
+<style>
+    .error {
+        color: red;
+    }
+
+    .form-control {
+        color: black;
+        width: 100%;
+    }
+
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+
+    .tablinks {
+        width: 20%;
+    }
+
+    .tab button {
+        background-color: inherit;
+        float: left;
+        border: 1px solid #ccc;
+        outline: none;
+        padding: 14px 16px;
+        transition: 0.3s;
+        align-items: stretch;
+    }
+
+        .tab button.clickable:hover {
+            background-color: inherit;
+            float: left;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            /*background-color: #ccc;*/
+            background-color: #26374a;
+            color: white;
+        }
+
+    /* Style the tab content */
+    .tabcontent {
+        /* display: none;*/
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+
+    .visuallyhidden {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    legend span.accessibility {
+        position: absolute;
+        left: -9999px;
+        width: 100px;
+        height: auto;
+        overflow: hidden;
+    }
+</style>
+
+
+<div class="brdr-tp brdr-rght brdr-bttm brdr-lft hght-inhrt">
+
+    <div class="mrgn-rght-md mrgn-bttm-md mrgn-lft-md mrgn-tp-md">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="text-center">Federal Court of Appeal Electronic Filing System</h1>
+            </div>
+        </div>
+
+        <!-- Tab links -->
+        <div class="tab" style="display: flex;">
+            <button class="tablinks clickable" id="step-1-tab">Step 1: Proceeding information</button>
+            <button class="tablinks active" id="step-2-tab">Step 2: Add party</button>
+            <button class="tablinks clickable" id="step-3-tab">Step 3: Add document</button>
+            <button class="tablinks" id="step-4-tab" disabled="">Step  4: Contact information</button>
+            <button class="tablinks" id="step-5-tab" disabled="">Step 5: Review</button>
+        </div>
+
+        <!-- Tab content -->
+        <div id="step-1" class="tabcontent" style="display: none; visibility: hidden;">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="text-center">Step 1: Court File</h3>
+                </div>
+            </div>
+
+            <div class="row">
+<form action="/en/online-access/new-e-filing-start" id="form1" method="post" novalidate="novalidate" data-gtm-form-interact-id="0"><div style="font-size:19px;">
+    <div class="col-md-12">
+        <div>
+            <div>
+                <h4>Please select the Language, Type, Subject and Nature applicable to this New Proceeding. You can also enter your internal office file number if you wish to do so for your own file management purposes.</h4>
+            </div>
+
+            <div class="has-error" id="Test">
+                <p><span class="field-validation-valid text-danger" data-valmsg-for="proceedingLang" data-valmsg-replace="true"></span></p>
+                <p><span class="field-validation-valid text-danger" data-valmsg-for="proceedingType" data-valmsg-replace="true"></span></p>
+                <p><span class="field-validation-valid text-danger" data-valmsg-for="proceedingSubject" data-valmsg-replace="true"></span></p>
+                <p><span class="field-validation-valid text-danger" data-valmsg-for="proceedingNature" data-valmsg-replace="true"></span></p>
+            </div>
+
+            <div class="brdr-tp brdr-rght brdr-bttm brdr-lft hght-inhrt">
+                <div class="mrgn-rght-md mrgn-bttm-md mrgn-lft-md mrgn-tp-md">
+                    <div class="form-group">
+                        <input id="cultureInfo" type="hidden" value="en-CA">
+                        <label><strong>Proceeding Language<span style="color: red;">*</span></strong></label><br>
+                        <select title="Proceeding Language" class="form-control valid" data-val="true" data-val-required="Proceeding Language is required." id="proceedingLang" name="proceedingLang" required="true" data-gtm-form-interact-field-id="0" aria-invalid="false"><option value="">---Choose One---</option>
+<option>English</option>
+<option>French</option>
+</select>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label><strong>Proceeding Type<span style="color:red;">*</span></strong></label>
+                        <select title="Proceeding Type" class="form-control valid" data-val="true" data-val-required="Proceeding Type is required." id="proceedingType" name="proceedingType" required="true" data-gtm-form-interact-field-id="1" aria-invalid="false"><option value="">---Choose One---</option><option value="null">Appeal</option><option value="null">Application for Judicial Review</option><option value="null">Preliminary</option><option value="null">Reference</option></select>
+                    </div>
+
+                </div>
+            </div>
+
+            <br>
+            <div id="defsClosed">
+                <button id="definitionsButton1" class="btn btn-primary" type="button">
+                    Click for definitions
+                    <i class="fa fa-chevron-down"></i>
+                </button>
+            </div>
+            <div id="defsOpened" style="visibility: hidden; display: none;">
+                <button id="definitionsButton2" class="btn btn-primary" type="button">
+                    Click for definitions
+                    <i class="fa fa-chevron-up"></i>
+                </button>
+            </div>
+
+            <div id="definitions" style="display: block;">
+                <br>
+                <div class="brdr-tp brdr-rght brdr-bttm brdr-lft hght-inhrt">
+                    <div class="mrgn-rght-md mrgn-bttm-md mrgn-lft-md mrgn-tp-md">
+                        <div>
+                            <ol>
+                                <li>
+                                    <b>Appeal (s. 27 of the Federal Courts Act or statutory appeal set out in any other act):</b>
+                                    a statutory remedy through which a party may challenge a lower court decision or a tribunal’s decision before the Federal Court of Appeal. A party who initiates an appeal is named "appellant"; the one against which the appeal is formed is named "respondent" (rule 338).<br>
+                                </li>
+                                <li>
+                                    <b>Application for judicial review (s. 28 of the Federal Courts Act):</b>
+                                    a mechanism that allows a party to ask the Federal Court of Appeal to review administrative decisions to ensure that the government and its agencies acted reasonably, fairly and within the power granted to them. A party who initiates an application for judicial review is named "applicant" ; the one against which it is formed is named "respondent" (rule 303).<br>
+                                </li>
+                                <li>
+                                    <b>Reference:</b>
+                                    is a procedure by which the Attorney General of Canada or an administrative tribunal asks the Federal Court of Appeal for its opinion on an issue that it considers important (s. 28(2) and s. 18.3).<br>
+                                </li>
+                                <li>
+                                    <b>Preliminary:</b>
+                                    is a procedure that allows a party to ask the Federal Court of Appeal to decide on any preliminary matter that must be resolved before a file can be opened (ie. motion for leave to appeal, request for extension of time, etc.).<br>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="brdr-tp brdr-rght brdr-bttm brdr-lft hght-inhrt">
+                <div class="mrgn-rght-md mrgn-bttm-md mrgn-lft-md mrgn-tp-md">
+                    <div class="form-group">
+                        <label><strong>Proceeding Subject<span style="color:red;">*</span></strong></label>
+                        <select title="Proceeding Subject" class="form-control valid" data-val="true" data-val-required="Proceeding Subject is required." id="proceedingSubject" name="proceedingSubject" required="true" data-gtm-form-interact-field-id="2" aria-invalid="false"><option value="">---Choose One---</option><option value="null">Appeal of a Final Decision of the Federal Court</option><option value="null">Appeal of a Final Decision of the Tax Court of Canada</option><option value="null">Appeal of an Interlocutory Decision of the Federal Court</option><option value="null">Appeal of an Interlocutory Decision of the Tax Court of Canada</option><option value="null">Statutory Appeal of a Decision of a Tribunal, Board or Commission</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label><strong>Proceeding Nature<span style="color:red;">*</span></strong></label>
+                        <select title="Proceeding Nature" class="form-control valid" data-val="true" data-val-required="Proceeding Nature is required." id="proceedingNature" name="proceedingNature" required="true" data-gtm-form-interact-field-id="3" aria-invalid="false"><option value="">---Choose One---</option><option value="E97">Aboriginal law (Appeal of a decision made under s. 47 of the Indian Act)</option><option value="E63">Aboriginal law (Appeal of a judicial review decision)</option><option value="E62">Aboriginal law (Canada was a defendant before the Federal Court)</option><option value="E61">Aboriginal law (Canada was a plaintiff before the Federal Court)</option><option value="E02">Access to Information Act</option><option value="E01">Admiralty</option><option value="E52">Appeal (S.27 - Final) - Application for Judicial Review</option><option value="E03">By or Against the Crown</option><option value="E04">Canada Labour Code</option><option value="E05">Copyright Act</option><option value="E06">Customs and Excise Tax Acts</option><option value="E07">Immigration</option><option value="E09">Industrial Design Act</option><option value="E18">Integrated Circuit Topography Act</option><option value="E15">Other</option><option value="E10">Patent Act</option><option value="E11">Privacy Act</option><option value="E54">Statutory Appeal</option><option value="E13">Trademarks Act</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label><strong><label for="iOfficeNo">Party's Internal File Number</label></strong></label>
+                        <input title="Party's Internal File Number" class="form-control" id="iOfficeNo" name="iOfficeNo" type="text" value="">
+                    </div>
+
+                    <div>
+                        <strong><span style="color:red;">* = (Required)</span></strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+                    <div class="justify-content-between pull-left mrgn-lft-md mrgn-tp-md">
+                        <button type="button" class="btn btn-outline-primary" id="Back-Step-1">
+                            <i class="fa fa-chevron-left"></i> Back
+                        </button>
+                    </div>
+                    <div class="justify-content-between pull-right mrgn-rght-md mrgn-tp-md">
+                        <button type="submit" class="btn btn-primary" id="Submit-Step-1">
+                            Continue
+                            <i class="fa fa-chevron-right"></i>
+                        </button>
+                    </div>
+</form>
+
+            </div>
+
+        </div> 
+
+        <div id="step-2" class="tabcontent" style="visibility: visible;">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 style="margin-bottom:20px">Step 2: Add party</h2>
+                </div>
+            </div>
+
+            <div class="row">
+
+<!--<form action="/en/online-access/new-e-filing-start" id="form2" method="post" novalidate="novalidate" data-gtm-form-interact-id="1">-->
+
+<div style="font-size:19px;">
+    <div class="col-sm-12">
+
+        <div>
+        <p>Please enter information about the parties involved in this proceeding.</p>
+        <p>For most proceedings, you must enter the roles and names of a <b>minimum of two opposing parties</b>. <br>
+
+            <div id="defsClosed">
+                <button id="definitionsButton1" class="btn btn-primary" type="button">
+                    Information about parties
+                    <i class="fa fa-chevron-down"></i>
+                </button>
+            </div>
+            <div id="defsOpened" style="display: none; visibility: hidden;">
+                <button id="definitionsButton2" class="btn btn-primary" type="button">
+                    Information about parties
+                    <i class="fa fa-chevron-up"></i>
+                </button>
+            </div>
+            <div id="definitions" style="display: block;">
+                <br>
+                <div class="brdr-tp brdr-rght brdr-bttm brdr-lft hght-inhrt">
+                    <div class="mrgn-rght-md mrgn-bttm-md mrgn-lft-md mrgn-tp-md">
+                        <div>
+                            <p>Parties are the individuals and/or organizations involved in a proceeding.</p>
+                            <p>For the <b>Party role</b>, enter the role that the individual/organization is taking in the proceeding. For example:</p>
+                            <ul>
+                                <li>In an <b>application for judicial review</b>, enter the names of the <b>Applicant(s)</b> and the <b>Respondent(s)</b>.</li>
+                                <li>In an <b>appeal</b>, enter the names of the <b>Appellant(s)</b> and the <b>Respondent(s)</b>.</li>
+                                <li>In a <b>motion</b>, enter the names of the <b>Moving Party or Parties</b> and the <b>Respondent(s)</b>.</li>
+                                <li>In a <b>reference</b>, there may only be one <b>Applicant</b>. Please enter the name of this party.</li>
+                            </ul>
+                        </p>
+                        <p>For the <b>Party type</b>, select 'individual' if the party is a specific person, and complete their name. Select 'other' if the party is a company, association, government body, or other organization.</p>
+                                <p>Use the <b>Add another party</b> button to add more rows if needed.</p>
+                                <p>If a party's name is longer than 39 characters, you may shorten it or use an acronym.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                         
+            
+
+
+
+        </div>
+
+
+        <br>
+
+        <div class="form-group">
+            <input id="cultureInfo" type="hidden" value="en-CA">
+            <div class="table-responsive">
+                <table class="table table-striped party-list" id="PartyList">
+
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width:22%;">Party role<span style="font-weight:400"> (required)</span></th>
+                            <th scope="col" style="width:22%;">Party type<span style="font-weight:400"> (required)</span></th>
+                            <th scope="col" style="width:22%;">First name/Organization name<span style="font-weight:400"> (required)</span></th>
+                            <th scope="col" style="width:22%;">Last name<span style="font-weight:400"> (required)</span></th>
+                            <th scope="col" style="width:12%;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody><tr><td><label for="PartyRole_0" class="visuallyhidden">Party Role</label><select id="PartyRole_0" name="PartyRole_0" class="form-control form-control-sm new valid" data-msg="Party Role is required." data-gtm-form-interact-field-id="4" aria-invalid="false"><option value="">---Choose One---</option><option value="Appellant">Appellant</option><option value="Intervener">Intervener</option><option value="Other">Other</option><option value="Respondent">Respondent</option></select></td><td><label for="PartyType_0" class="visuallyhidden">Party Details</label><select id="PartyType_0" name="PartyType_0" class="form-control form-control-sm new dropdowntarget valid" data-msg="Party Details are required." data-gtm-form-interact-field-id="5" aria-invalid="false"><option value="">---Choose One---</option><option value="Individual">Individual</option><option value="Other">Other</option></select></td><td><label for="firstName_0" class="visuallyhidden">First Name/Company Name</label><input type="text" class="form-control form-control-sm new valid" id="firstName_0" name="firstName[]" data-msg="Name is required." maxlength="39" data-gtm-form-interact-field-id="6" aria-invalid="false"></td><td><label for="lastName_0" class="visuallyhidden">Last Name</label><input type="text" class="form-control form-control-sm new valid" id="lastName_0" name="lastName[]" data-msg="Name is required." maxlength="39" data-gtm-form-interact-field-id="7" aria-invalid="false"></td><td><button class="btn btn-primary btn-sm ibtnDel" value="Remove party"><i class="fa-solid fa-minus"></i>&nbsp; Remove party</button></td></tr><tr><td><label for="PartyRole_0" class="visuallyhidden">Party Role</label><select id="PartyRole_0" name="PartyRole_0" class="form-control form-control-sm new valid" data-msg="Party Role is required." data-gtm-form-interact-field-id="4" aria-invalid="false"><option value="">---Choose One---</option><option value="Appellant">Appellant</option><option value="Intervener">Intervener</option><option value="Other">Other</option><option value="Respondent">Respondent</option></select></td><td><label for="PartyType_0" class="visuallyhidden">Party Details</label><select id="PartyType_0" name="PartyType_0" class="form-control form-control-sm new dropdowntarget valid" data-msg="Party Details are required." data-gtm-form-interact-field-id="5" aria-invalid="false"><option value="">---Choose One---</option><option value="Individual">Individual</option><option value="Other">Other</option></select></td><td><label for="firstName_0" class="visuallyhidden">First Name/Company Name</label><input type="text" class="form-control form-control-sm new valid" id="firstName_0" name="firstName[]" data-msg="Name is required." maxlength="39" data-gtm-form-interact-field-id="6" aria-invalid="false"></td><td><label for="lastName_0" class="visuallyhidden">Last Name</label><input type="text" class="form-control form-control-sm new valid" id="lastName_0" name="lastName[]" data-msg="Name is required." maxlength="39" data-gtm-form-interact-field-id="7" aria-invalid="false"></td><td><button class="btn btn-primary btn-sm ibtnDel" value="Remove party"><i class="fa-solid fa-minus"></i>&nbsp; Remove party</button></td></tr></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5" style="text-align: left;">
+
+                                <button class="btn btn-primary valid" id="addrow_Party" value="Add another party" aria-invalid="false"><i class="fa-solid fa-plus"></i>&nbsp; Add another party</button>
+
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+        
+
+    </div>
+</div>
+
+
+                    <div class="justify-content-between pull-left mrgn-lft-md mrgn-tp-md">
+                        <button type="button" class="btn btn-outline-primary" id="Back-Step-2">
+                            <i class="fa fa-chevron-left"></i> Back
+                        </button>
+                    </div>
+                    <div class="justify-content-between pull-right mrgn-rght-md mrgn-tp-md">
+                        <a href="a05-add-doc.html"><button type="submit" class="btn btn-success" id="Submit-Step-2" href="a05-add-doc.html">
+                            Next
+                            <i class="fa fa-chevron-right"></i>
+                        </button>
+                        </a>
+                    </div>
+</form>            </div>
+
+        </div> 
+
+        <br>
+            <div class="brdr-tp brdr-rght brdr-bttm brdr-lft hght-inhrt">
+                <div class="mrgn-rght-md mrgn-bttm-md mrgn-lft-md mrgn-tp-md">
+                    <div class="form-group">
+                <h4>Share your feedback</h4>
+                <p>Take 5 minutes to let us know about your experience. The survey will open in a new browser tab.</p>
+                <a href="https://forms.microsoft.com/r/1YCRBV91uf" target="new" type="button" class="btn btn-primary">Start survey</a>
+    </div>
+   
+
+
+        <div id="step-3" class="tabcontent" style="display: none; visibility: hidden;">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="text-center">Step 3: Add / Edit Document</h3>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+<form action="a05-add-doc.html" enctype="multipart/form-data" id="form3" method="post" novalidate="novalidate"><input name="__RequestVerificationToken" type="hidden" value="GAcVb3V6wubxxfEuGZhMxh1i2DxcCS_tSIHJDm6kgPv2Mnu6Hsj5TEU2snQxxSgSzjDAStuK_LYAPq3rdvTCWvAHJvI6p5phfWlObJqEQNs1">                    <div id="form-content-step3">
+                        <div style="font-size:19px;">
+    <div class="col-sm-12">
+
+        <div class="form-group">
+            <input id="cultureInfo" type="hidden" value="en-CA">
+            <div class="table-responsive">
+
+                <table class="table table-striped doc-list" id="docList">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width: 25%">Document Type<span style="color:red;">*</span></th>
+                            <th scope="col" style="width: 20%">Document Name<span style="color: red;">*</span></th>
+                            <th scope="col" style="width: 15%">Document Language<span style="color: red;">*</span></th>
+                            <th scope="col" style="width: 20%">Filing Party(ies)<span style="color: red;">*</span></th>
+                            <th scope="col" style="width: 15%">Handling Instructions for the Submission (Maximum 255 characters)</th>
+                            <th scope="col" style="width: 5%">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            
+
+                            
+
+                            <td colspan="12" style="text-align:center;vertical-align:middle;">Large documents may take several minutes to upload. Please be patient while your documents are uploaded.</td>
+
+                        </tr>
+                        <tr>
+                            <td colspan="12" style="text-align:center;vertical-align:middle;font-weight:bold;color:red">WARNING! Do not upload confidential documents to the e-filing system.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="12" style="text-align:center;vertical-align:middle">
+                                <input type="button" class="btn btn-primary" id="addrow" value="Add Document">
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div>
+                    Please click the “Add Document” button above to add any additional document(s) to be filed.<br>
+                    <strong><span style="color:red;">* = (Required)</span></strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+                    </div>
+                    <div class="justify-content-between pull-left mrgn-lft-md mrgn-tp-md">
+                        <button type="button" class="btn btn-outline-primary" id="Back-Step-3">
+                            <i class="fa fa-chevron-left"></i> Back
+                        </button>
+                    </div>
+                    <div class="justify-content-between pull-right mrgn-rght-md mrgn-tp-md">
+                        <button type="submit" class="btn btn-primary" id="Submit-Step-3">
+                            Continue
+                            <i class="fa fa-chevron-right"></i>
+                        </button>
+                    </div>
+</form>
+            </div>
+
+        </div> 
+
+        <div id="step-4" class="tabcontent" style="display: none; visibility: hidden;">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="text-center">Step  4: Contact Information</h3>
+                </div>
+            </div>
+            <div class="row">
+<form action="/en/online-access/new-e-filing-start" enctype="multipart/form-data" id="form4" method="post" novalidate="novalidate">
+<div style="font-size:19px;">
+    <div class="col-md-12">
+
+        <div>
+            <h4>Please provide your <a href="#" data-placement="top" title="Contact information of the person who files an electronic document">contact information</a>, select filing location and confirm if the filing is urgent.</h4>
+        </div>
+
+        <!--Validiation errors for mandatory-->
+        <p><span class="field-validation-valid text-danger" data-valmsg-for="firstName" data-valmsg-replace="true"></span></p>
+        <p><span class="field-validation-valid text-danger" data-valmsg-for="lastName" data-valmsg-replace="true"></span></p>
+
+        <p><span class="field-validation-valid text-danger" data-valmsg-for="regOfficeDDL" data-valmsg-replace="true"></span></p>
+        
+        <p><span class="field-validation-valid text-danger" data-valmsg-for="languageDDL" data-valmsg-replace="true"></span></p>
+        <p><span class="field-validation-valid text-danger" data-valmsg-for="phoneNumber" data-valmsg-replace="true"></span></p>
+        <p><span class="field-validation-valid text-danger" data-valmsg-for="priEmail" data-valmsg-replace="true"></span></p>
+        <!--Validiation errors for self-inflicted errors-->
+        
+        <p><span class="field-validation-valid text-danger" data-valmsg-for="urgDesc" data-valmsg-replace="true"></span></p>
+        <p><span class="field-validation-valid text-danger" data-valmsg-for="secEmail" data-valmsg-replace="true"></span></p>
+        <!--Secondary email?  That seems passe-->
+        <!--/Validiation errors-->
+
+        <div class="brdr-tp brdr-rght brdr-bttm brdr-lft hght-inhrt">
+            <div class="mrgn-rght-md mrgn-bttm-md mrgn-lft-md mrgn-tp-md">
+
+                <div class="heading">
+                    
+                    <h4><label for="Contact_Information_for_the_Person_Making_a_Submission_to_the_E-Filing_System">Contact Information for the Person Making a Submission to the E-Filing System</label></h4>
+                </div>
+
+                
+                
+            <div class="form-group">
+
+                <input id="cultureInfo" type="hidden" value="en-CA">
+                <label id="contact--firstname">
+                    <strong><label for="firstName">First Name</label><span style="color:red;">*</span></strong>
+                </label>
+                <input title="First Name" class="form-control" data-val="true" data-val-maxlength="The field firstName must be a string or array type with a maximum length of '100'." data-val-maxlength-max="100" data-val-required="Name is required." id="firstName" maxlength="50" name="firstName" required="true" type="text" value="">
+
+            </div>
+                <div class="form-group">
+                    <label id="contact--lastname">
+                        <strong><label for="lastName">Last Name</label><span style="color:red;">*</span></strong>
+                    </label>
+                    <input title="Last Name" class="form-control" data-val="true" data-val-maxlength="The field lastName must be a string or array type with a maximum length of '100'." data-val-maxlength-max="100" data-val-required="Name is required." id="lastName" maxlength="100" name="lastName" required="true" type="text" value="">
+                </div>
+
+                <div class="form-group">
+                    <label for="City">City</label>
+                    <input title="City" class="form-control" data-val="true" data-val-maxlength="The field City must be a string or array type with a maximum length of '80'." data-val-maxlength-max="80" id="City" maxlength="80" name="City" type="text" value="">
+                </div>
+                <div class="form-group">
+                    <strong>
+                        <label for="phoneNumber">Telephone Number</label><span style="color:red;">*
+                        </span>
+                    </strong>
+                    <input title="Telephone Number" class="form-control" data-val="true" data-val-maxlength="The field phoneNumber must be a string or array type with a maximum length of '12'." data-val-maxlength-max="12" data-val-regex="Telephone Number must be of the following format 999-999-9999." data-val-regex-pattern="^\(?\d{3}\)?-? *\d{3}-? *-?\d{4}$" data-val-required="Telephone Number must be of the following format 999-999-9999." id="phoneNumber" maxlength="12" name="phoneNumber" required="true" type="text" value="">
+                </div>
+
+                <!--Primary Email-->
+                <div class="form-group">
+                    <strong>
+                        <label for="priEmail">E-mail Address</label><span style="color:red;">*
+                        </span>
+                    </strong>
+                    <input title="E-mail Address" class="form-control" data-val="true" data-val-maxlength="The field priEmail must be a string or array type with a maximum length of '255'." data-val-maxlength-max="255" data-val-regex="A valid E-mail Address is required." data-val-regex-pattern="^(([0-9a-zA-ZÀ-ÿ]).*)@(([0-9a-zA-ZÀ-ÿ].*\.*)[A-Za-zÀ-ÿ0-9]{2,})$" data-val-required="A valid E-mail Address is required." id="priEmail" maxlength="255" name="priEmail" required="true" type="text" value="">
+                </div>
+
+                <div class="form-group">
+                    <div id="stepfour--email__second">
+                        <label for="secEmail">Alternate E-mail Address</label>
+                        <input title="Alternate E-mail Address" class="form-control" data-val="true" data-val-maxlength="The field secEmail must be a string or array type with a maximum length of '255'." data-val-maxlength-max="255" id="secEmail" maxlength="255" name="secEmail" type="text" value="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div id="stepfour--language">
+                        <strong>
+                            <label for="languageDDL">Language of communication with Registry</label><span style="color:red;">*
+                            </span>
+                        </strong>
+                        <select title="Language of communication with Registry" class="form-control" data-val="true" data-val-required="Language of communication with Registry is required." id="languageDDL" name="languageDDL" required="true"><option value="">---Choose One---</option>
+<option value="E">English</option>
+<option value="F">French</option>
+</select>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+        
+
+        <br>
+
+        <div class="brdr-tp brdr-rght brdr-bttm brdr-lft hght-inhrt">
+            <div class="mrgn-rght-md mrgn-bttm-md mrgn-lft-md mrgn-tp-md">
+
+                <div class="form-group">
+                    <div class="heading">
+                        
+                        <h4><label for="Filing_location">Filing location</label></h4>
+                    </div>
+
+                    <div>
+                        <p>Please select the Registry Office closest to your location.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <div>
+                            <!--DropDown for registry office-->
+                            <strong>
+                                <label for="registryOffice">Registry Office</label><span style="color:red;">*
+                                </span>
+                            </strong>
+                            <select title="Registry Office" class="form-control" data-val="true" data-val-required="A Registry Office is required." id="regOfficeDDL" name="regOfficeDDL" required="true"><option value="">---Choose One---</option>
+<option value=" 7.0">Calgary</option>
+<option value=" 120.0">Charlottetown</option>
+<option value=" 4.0">Edmonton</option>
+<option value=" 35.0">Fredericton</option>
+<option value=" 62.0">Halifax</option>
+<option value=" 191.0">Iqaluit</option>
+<option value=" 138.0">Montréal</option>
+<option value=" 71.0">Ottawa</option>
+<option value=" 135.0">Québec</option>
+<option value=" 157.0">Regina</option>
+<option value=" 151.0">Saskatoon</option>
+<option value=" 42.0">St. John's</option>
+<option value=" 113.0">Toronto</option>
+<option value=" 19.0">Vancouver</option>
+<option value=" 158.0">Whitehorse</option>
+<option value=" 25.0">Winnipeg</option>
+<option value=" 64.0">Yellowknife</option>
+</select>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="brdr-tp brdr-rght brdr-bttm brdr-lft hght-inhrt">
+            <div class="mrgn-rght-md mrgn-bttm-md mrgn-lft-md mrgn-tp-md">
+                <div class"form-group"="">
+                    <div class="heading">
+                        
+
+                        <h4><label for="Filing_Urgency">Filing Urgency</label></h4>
+                    </div>
+
+                    If the filing is urgent, please click the checkbox below and provide a brief explanation.
+
+                    <fieldset class="gc-chckbxrdio">
+                        <legend><span class="accessibility">Welcome screen agreement</span></legend>
+                        <ul class="list-unstyled lst-spcd-1">
+                            <li class="checkbox">
+                                <input type="checkbox" id="isUrgent">
+                                <label for="isUrgent">
+                                    Is Filing Urgent?
+                                </label>
+                            </li>
+                        </ul>
+                    </fieldset>
+
+
+                    
+
+                    <label for="urgDesc">Urgency Description</label>
+                    <br>
+                    <textarea title="Urgency Description" class="form-control" cols="40" disabled="True" id="urgDesc" maxlength="255" name="urgDesc" rows="8" style="width:100%;"></textarea>
+                    <b>*Limit of 255 characters. </b>
+                    <br>
+                    <span id="countDownUrg"></span>
+
+                </div>
+
+
+                <div>
+                    <br>
+                    <strong><span style="color:red;">* = (Required)</span></strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                    <div class="justify-content-between pull-left mrgn-lft-md mrgn-tp-md">
+                        <button type="button" class="btn btn-outline-primary" id="Back-Step-4">
+                            <i class="fa fa-chevron-left"></i> Back
+                        </button>
+                    </div>
+                    <div class="justify-content-between pull-right mrgn-rght-md mrgn-tp-md">
+                        <button type="submit" class="btn btn-primary" id="Submit-Step-4">
+                            Continue
+                            <i class="fa fa-chevron-right"></i>
+                        </button>
+                    </div>
+</form>            </div>
+
+        </div> 
+
+        <div id="step-5" class="tabcontent" style="display: none; visibility: hidden;">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="text-center">Step 5: Summary</h3>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="ajaxMe">
+                    
+<div class="col-md-12">
+    <div>
+        <h4>
+            Please review the details you have entered. If you wish to edit your information, please press the “Back” button to return to a previous screen.
+            Once you are ready to submit your document, click “Submit”.
+            <br><br>
+            Large documents may take several minutes to upload. Please be patient while your documents are uploaded.
+        </h4>
+    </div>
+
+<form action="/en/online-access/processData" id="Form5" method="post">        <!--Court Case Info-->
+        <input id="cultureInfo" type="hidden" name="cultureInfo" value="en-CA">
+        <div style="font-size:19px;">
+            <div class="brdr-tp brdr-rght brdr-bttm brdr-lft hght-inhrt">
+                <div class="mrgn-rght-md mrgn-bttm-md mrgn-lft-md mrgn-tp-md">
+                    <div id="stepfive--courtcase">
+                        <div class="heading">
+                            <h4>Court Case Information</h4>
+                        </div>
+                        <p>
+                            <label><b>Court:</b></label> Federal Court of Appeal<br>
+
+                                 <label><b>Proceeding Type:</b></label> <br>
+                                 <label><b>Proceeding Subject:</b></label> <br>
+                                 <label><b>Proceeding Nature:</b></label> <br>
+
+
+                                                    </p>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="brdr-tp brdr-rght brdr-bttm brdr-lft hght-inhrt">
+                <div class="mrgn-rght-md mrgn-bttm-md mrgn-lft-md mrgn-tp-md">
+                    <!-- Filing Party-->
+                    <div id="stepfive--filingparty">
+                        <div class="heading">
+                            <h4>Contact Information for the Person Submitting a Filing</h4>
+                        </div>
+                        <p>
+                            <label><b>Name:</b></label> <br>
+                            <label><b>Telephone Number:</b></label> <br>
+                            <label><b>E-mail Address:</b></label> <br>
+
+                            <label><b>Language of communication with Registry:</b></label> <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="brdr-tp brdr-rght brdr-bttm brdr-lft hght-inhrt">
+                <div class="mrgn-rght-md mrgn-bttm-md mrgn-lft-md mrgn-tp-md">
+                    <!--Filing Information-->
+                    <div id="stepfive--filinginfo">
+                        <div class="heading">
+                            <h4>Filing Information</h4>
+                        </div>
+                        <p>
+                            <label><b>Filing Urgency:</b></label>
+No                            <br>
+                            <label><b>Registry Office:</b></label>  <br>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="brdr-tp brdr-rght brdr-bttm brdr-lft hght-inhrt">
+                <div class="mrgn-rght-md mrgn-bttm-md mrgn-lft-md mrgn-tp-md">
+                    <!--Filing Documents-->
+                    <div id="stepfive--filingdocs">
+                        <div class="heading">
+                            <h4>Filing Documents</h4>
+                        </div>
+                        <table id="datatable" class="table table-striped table-hover table-bordered dataTable no-footer dtr-inline" style="width: 100%;" role="grid" aria-describedby="datatable_info">
+                            <thead>
+                                <tr role="row">
+                                    <th tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Documents Submitted</th>
+                                    <th>Filing Party</th>
+                                    <th>Handling Instructions for the Submission</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <br>
+                </div>
+            </div>
+
+            <br>
+        </div>
+</form></div>
+
+
+
+                </div>
+                <div class="justify-content-between pull-left mrgn-lft-md mrgn-tp-md">
+                    <button type="submit" class="btn btn-outline-primary" id="Back-Step-5">
+                        <i class="fa fa-chevron-left"></i> Back
+                    </button>
+                </div>
+                <div class="justify-content-between pull-right mrgn-rght-md mrgn-tp-md">
+                    <p>
+                        <input value="Submit" type="button" id="Submit-Step-5" class="btn btn-primary btn-rounded btn-md ml-4">
+                    </p>
+                </div>
+            </div>
+
+        </div> 
+    </div>
+
+</div>
+
+
+
+
+            <div class="mrgn-tp-lg mrgn-bttm-lg">
+                <dl id="wb-dtmd">
+                    <dt>Date modified:</dt>
+                    <dd><time property="dateModified">2023-04-03</time></dd>
+                </dl>
+            </div>
+        </main>
+
+    <footer id="wb-info">
+        
+
+<div class="landscape">
+    <nav class="container wb-navcurr">
+
+            <div class="row">
+                <div class="col-md-3 text-white">
+                    <h3 class="mb-2">Federal Court of Appeal</h3>
+                    <ul class="list-unstyled">
+                        <li><span class="fas fa-university"></span> <a href="https://www.cas-satj.gc.ca/en/operations/locations.shtml">Registry Locations</a></li>                       
+                        <li><span class="fa fa-phone"></span> <a href="https://www.cas-satj.gc.ca/en/operations/numbers.shtml">Registry Phone Numbers</a></li>
+                        <li><span class="fa fa-envelope"></span> <a href="mailto:information@fca-caf.gc.ca">information@fca-caf.ca</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 text-white">  </div>              
+                <div class="col-md-2 text-white"></div>                
+                
+                <div class="col-md-2 text-white">
+                    <h3 class="mb-2">Stay Informed</h3>
+                    <ul class="list-unstyled">
+                        <li><span class="fa fa-envelope"></span> <a href="https://www.fca-caf.ca/en/pages/web-based-litigation-tools/electronic-mailing-lists">Mailing List</a></li>
+                        <li><i class="fa-brands fa-square-x-twitter"></i> <a href="https://twitter.com/FedCourtApp_en">X/Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+    </nav>
+
+
+</div>
+<div class="brand">
+    <div class="container">
+        <div class="row">
+            <nav class="col-md-9 col-lg-8 ftr-urlt-lnk">
+                    <ul>
+                        <li><a href="https://www.fca-caf.ca/en/pages/important-notices">Important Notices</a></li>
+                      
+                    </ul>
+            </nav>
+
+            
+            
+        </div>
+
+    </div>
+</div>
+
+
+
+    </footer>
+    
+    
+    
+    <script src="https://efiling.fca-caf.ca/Content/vendors/jquery-validation/jquery.validate.js"></script>
+    <script src="https://efiling.fca-caf.ca/Content/vendors/jquery/jquery.unobtrusive-ajax.js"></script>
+    <script src="https://efiling.fca-caf.ca/Content/vendors/jquery-ui/jquery-ui.js"></script>
+    <script src="https://efiling.fca-caf.ca/Content/vendors/jquery-ui/jquery-ui.min.js"></script>
+    <script src="https://efiling.fca-caf.ca/Content/vendors/jquery-ui-bootstrap/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="https://efiling.fca-caf.ca/Content/vendors/wet-boew/js/wet-boew.min.js"></script><span id="wb-rsz" class="wb-init">&nbsp;</span>
+    <script src="https://efiling.fca-caf.ca/Content/vendors/GCWeb/js/theme.min.js"></script>
+    <script src="https://efiling.fca-caf.ca/Content/vendors/js-cookie/js.cookie.js"></script>
+    
+
+
+
+    <script src="https://efiling.fca-caf.ca/Content/js/base/js.js"></script>
+    <script src="https://efiling.fca-caf.ca/Content/js/base/utils.js"></script>
+    <script src="https://efiling.fca-caf.ca/Content/js/base/data.js"></script>
+    <script src="https://efiling.fca-caf.ca/Content/js/base/popup.js"></script>
+    <script src="https://efiling.fca-caf.ca/Content/js/base/utils.js"></script>
+
+</body>

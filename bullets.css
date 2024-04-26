@@ -1,0 +1,8 @@
+.circle { list-style: circle; }
+.disc { list-style: disc; }
+
+
+.hint {
+    color:#737373;
+    line-height: 100%;
+}

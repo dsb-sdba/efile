@@ -1,0 +1,5 @@
+.tgl-tab {
+    border-style:none;
+    ::marker:none !important;
+    list-style-type:none !important;
+}
