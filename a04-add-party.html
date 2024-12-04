@@ -115,19 +115,21 @@ gtag('config', 'G-Q1HWL3M994');
                 <section id="wb-lng" class="col-xs-3 col-sm-12 pull-right text-right">
                     <span class="wb-inv">Language selection</span>
                     <ul class="list-inline mrgn-bttm-0">
-                        <li><a href="https://www.fca-caf.ca/en/home" title="Federal Court of Appeal" target="_blank">Federal Court of Appeal website</a></li>
-                        <li><a href="https://efiling.fca-caf.ca/en/online-access/startover" title="Home">E-Filing home</a></li>
-                        <li><a href="https://efiling.fca-caf.ca/en/online-access/guide" title="Guide" target="_blank">User guide</a></li>
-                        <li><a href="https://efiling.fca-caf.ca/en/online-access/faq" title="F.A.Q." target="_blank">Frequently-asked questions</a></li>
-                        <li>
-                            <a lang="fr" hreflang="fr" href="https://efiling.fca-caf.ca/fr/acces-en-ligne/new-e-filing-start">
-                                <span class="hidden-xs">Français</span>
-                                <abbr title="Français" class="visible-xs h3 mrgn-tp-sm mrgn-bttm-0 text-uppercase">fr</abbr>
+                        <li><a href="https://www.fca-caf.ca/en/home" title="Federal Court of Appeal" target="_blank">Federal Court of Appeal Website</a></li>
+                    <li><a href="https://efiling.fca-caf.ca/en/online-access/startover" title="Home">E-Filing Home</a></li>
+                    <li><a href="https://efiling.fca-caf.ca/en/online-access/guide" title="Guide" target="_blank">User Guide</a></li>
+                    <li><a href="https://efiling.fca-caf.ca/en/online-access/faq" title="F.A.Q." target="_blank">Frequently Asked Questions</a></li>
+                    <li>
+                        <a lang="fr"
+                           hreflang="fr"
+                           href="https://efiling.fca-caf.ca/fr/acces-en-ligne/e-filing-intro">
+                            <span class="hidden-xs">Fran&#231;ais</span>
+                            <abbr title="Fran&#231;ais" class="visible-xs h3 mrgn-tp-sm mrgn-bttm-0 text-uppercase">fr</abbr>
 
-                            </a>
-                        </li>
+                        </a>
+                    </li>
 
-                    </ul>
+                </ul>
                 </section>
                 <div class="brand col-xs-9 col-sm-5 col-md-4" property="publisher" resource="#wb-publisher" typeof="Government Organization">
                     
@@ -246,14 +248,14 @@ gtag('config', 'G-Q1HWL3M994');
             </div>
         </div>
 
-        <!-- Tab links -->
-        <div class="tab" style="display: flex;">
-            <button class="tablinks clickable" id="step-1-tab">Step 1: Proceeding information</button>
-            <button class="tablinks active" id="step-2-tab">Step 2: Add party</button>
-            <button class="tablinks clickable" id="step-3-tab">Step 3: Add document</button>
-            <button class="tablinks" id="step-4-tab" disabled="">Step  4: Contact information</button>
-            <button class="tablinks" id="step-5-tab" disabled="">Step 5: Review</button>
-        </div>
+       <!-- Tab links -->
+       <div class="tab" style="display: flex;">
+        <button class="tablinks clickable" id="step-1-tab">Step 1: Proceeding Information</button>
+        <button class="tablinks active" id="step-2-tab">Step 2: Add Party</button>
+        <button class="tablinks" id="step-3-tab" disabled="">Step 3: Add Document</button>
+        <button class="tablinks" id="step-4-tab" disabled="">Step  4: Contact Information</button>
+        <button class="tablinks" id="step-5-tab" disabled="">Step 5: Review</button>
+    </div>
 
         <!-- Tab content -->
         <div id="step-1" class="tabcontent" style="display: none; visibility: hidden;">
@@ -392,7 +394,7 @@ gtag('config', 'G-Q1HWL3M994');
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 style="margin-bottom:20px">Step 2: Add party</h2>
+                    <h2 style="margin-bottom:20px">Step 2: Add Party</h2>
                 </div>
             </div>
 
@@ -405,7 +407,7 @@ gtag('config', 'G-Q1HWL3M994');
 
         <div>
         <p>Please enter information about the parties involved in this proceeding.</p>
-        <p>For most proceedings, you must enter the roles and names of a <b>minimum of two opposing parties</b>. <br>
+        <p>For most proceedings, you must enter the roles and names of a minimum of <b>one appellant</b>, <b>one applicant or one moving party</b> and <b>one respondent</b>.   <br>
 
             <div id="defsClosed">
                 <button id="definitionsButton1" class="btn btn-primary" type="button">
@@ -419,13 +421,12 @@ gtag('config', 'G-Q1HWL3M994');
                     <i class="fa fa-chevron-up"></i>
                 </button>
             </div>
-            <div id="definitions" style="display: block;">
-                <br>
+            <div id="definitions" style="display: none; visibility: hidden;">
                 <div class="brdr-tp brdr-rght brdr-bttm brdr-lft hght-inhrt">
                     <div class="mrgn-rght-md mrgn-bttm-md mrgn-lft-md mrgn-tp-md">
                         <div>
                             <p>Parties are the individuals and/or organizations involved in a proceeding.</p>
-                            <p>For the <b>Party role</b>, enter the role that the individual/organization is taking in the proceeding. For example:</p>
+                            <p>For the <b>Party Role</b>, enter the role that each named individual/organization are taking in the proceeding. For example:</p>
                             <ul>
                                 <li>In an <b>application for judicial review</b>, enter the names of the <b>Applicant(s)</b> and the <b>Respondent(s)</b>.</li>
                                 <li>In an <b>appeal</b>, enter the names of the <b>Appellant(s)</b> and the <b>Respondent(s)</b>.</li>
@@ -433,13 +434,14 @@ gtag('config', 'G-Q1HWL3M994');
                                 <li>In a <b>reference</b>, there may only be one <b>Applicant</b>. Please enter the name of this party.</li>
                             </ul>
                         </p>
-                        <p>For the <b>Party type</b>, select 'individual' if the party is a specific person, and complete their name. Select 'other' if the party is a company, association, government body, or other organization.</p>
-                                <p>Use the <b>Add another party</b> button to add more rows if needed.</p>
-                                <p>If a party's name is longer than 39 characters, you may shorten it or use an acronym.</p>
+                        <p>For the <b>Party Type</b>, select 'Individual' if the party is a specific person, and complete their name. Select 'Other' if the party is a company, association, government body, or other organization.</p>
+                                <p>Use the <b>Add another party</b> button to add more parties if needed.</p>
+                                <p>If a party's name is longer than 39 characters, you may need to shorten it or use an acronym.</p>
                             
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
 
 
@@ -448,10 +450,12 @@ gtag('config', 'G-Q1HWL3M994');
 
 
 
-        </div>
 
 
         <br>
+      
+        <div class="col-sm-12">
+            <hr>
 
         <div class="form-group">
             <input id="cultureInfo" type="hidden" value="en-CA">
@@ -460,10 +464,10 @@ gtag('config', 'G-Q1HWL3M994');
 
                     <thead>
                         <tr>
-                            <th scope="col" style="width:22%;">Party role<span style="font-weight:400"> (required)</span></th>
-                            <th scope="col" style="width:22%;">Party type<span style="font-weight:400"> (required)</span></th>
-                            <th scope="col" style="width:22%;">First name/Organization name<span style="font-weight:400"> (required)</span></th>
-                            <th scope="col" style="width:22%;">Last name<span style="font-weight:400"> (required)</span></th>
+                            <th scope="col" style="width:22%;">Party Role<span style="font-weight:400"> (required)</span></th>
+                            <th scope="col" style="width:22%;">Party Type<span style="font-weight:400"> (required)</span></th>
+                            <th scope="col" style="width:22%;">First Name/Organization Name<span style="font-weight:400"> (required)</span></th>
+                            <th scope="col" style="width:22%;">Last Name<span style="font-weight:400"> (required)</span></th>
                             <th scope="col" style="width:12%;">Action</th>
                         </tr>
                     </thead>
@@ -1001,25 +1005,80 @@ No                            <br>
 
 
     </footer>
-    
-    
-    
-    <script src="https://efiling.fca-caf.ca/Content/vendors/jquery-validation/jquery.validate.js"></script>
-    <script src="https://efiling.fca-caf.ca/Content/vendors/jquery/jquery.unobtrusive-ajax.js"></script>
-    <script src="https://efiling.fca-caf.ca/Content/vendors/jquery-ui/jquery-ui.js"></script>
-    <script src="https://efiling.fca-caf.ca/Content/vendors/jquery-ui/jquery-ui.min.js"></script>
-    <script src="https://efiling.fca-caf.ca/Content/vendors/jquery-ui-bootstrap/js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script src="https://efiling.fca-caf.ca/Content/vendors/wet-boew/js/wet-boew.min.js"></script><span id="wb-rsz" class="wb-init">&nbsp;</span>
-    <script src="https://efiling.fca-caf.ca/Content/vendors/GCWeb/js/theme.min.js"></script>
-    <script src="https://efiling.fca-caf.ca/Content/vendors/js-cookie/js.cookie.js"></script>
-    
+
+
+</div>
+
+</div>
+</div>
 
 
 
-    <script src="https://efiling.fca-caf.ca/Content/js/base/js.js"></script>
-    <script src="https://efiling.fca-caf.ca/Content/js/base/utils.js"></script>
-    <script src="https://efiling.fca-caf.ca/Content/js/base/data.js"></script>
-    <script src="https://efiling.fca-caf.ca/Content/js/base/popup.js"></script>
-    <script src="https://efiling.fca-caf.ca/Content/js/base/utils.js"></script>
+</footer>
 
+
+<script src="https://efiling.fca-caf.ca/Content/vendors/jquery-validation/jquery.validate.js"></script>
+<script src="https://efiling.fca-caf.ca/Content/vendors/jquery/jquery.unobtrusive-ajax.js"></script>
+<script src="https://efiling.fca-caf.ca/Content/vendors/jquery-ui/jquery-ui.js"></script>
+<script src="https://efiling.fca-caf.ca/Content/vendors/jquery-ui/jquery-ui.min.js"></script>
+<script src="https://efiling.fca-caf.ca/Content/vendors/jquery-ui-bootstrap/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="https://efiling.fca-caf.ca/Content/vendors/wet-boew/js/wet-boew.min.js"></script><span id="wb-rsz" class="wb-init">&nbsp;</span>
+<script src="https://efiling.fca-caf.ca/Content/vendors/GCWeb/js/theme.min.js"></script>
+<script src="https://efiling.fca-caf.ca/Content/vendors/js-cookie/js.cookie.js"></script>
+
+
+
+
+<script src="https://efiling.fca-caf.ca/Content/js/base/js.js"></script>
+<script src="https://efiling.fca-caf.ca/Content/js/base/utils.js"></script>
+<script src="https://efiling.fca-caf.ca/Content/js/base/data.js"></script>
+<script src="https://efiling.fca-caf.ca/Content/js/base/popup.js"></script>
+<script src="https://efiling.fca-caf.ca/Content/js/base/utils.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        
+    //    $('#loadingscreen').hide();
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+
+        $(".tooltip-top").tooltip({
+            placement: 'top'
+        });
+        $(".tooltip-right").tooltip({
+            placement: 'right'
+        });
+        $(".tooltip-bottom").tooltip({
+            placement: 'bottom'
+        });
+        $(".tooltip-left").tooltip({
+            placement: 'left'
+        });
+
+        
+    });
+</script>
+
+<script>
+     //show definitions box, show button to hide them
+     $('#definitionsButton1').on("click", function (e) {
+
+$("#definitions").show().css("visibility", "visible");
+$("#defsClosed").hide().css("visibility", "hidden");
+$("#defsOpened").show().css("visibility", "visible");
+});
+
+//hide definitions box, show button to open them
+$('#definitionsButton2').on("click", function (e) {
+$("#definitions").hide().css("visibility", "hidden");
+$("#defsClosed").show().css("visibility", "visible");
+$("#defsOpened").hide().css("visibility", "hidden");
+});
+
+</script>
 </body>
